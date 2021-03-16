@@ -1,0 +1,7 @@
+.hero-section{
+    background-image: url("/images/immortal-map.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 25px;
+    width: 100%;
+}

@@ -1,0 +1,5 @@
+.cards-section__cards-aligment{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
