@@ -1,28 +1,28 @@
-@import "/block/navigation/__link.css";
-@import "/block/navigation/__item.css";
-@import "/block/navigation/navigation.css";
+@import "../block/navigation/__link.css";
+@import "../block/navigation/__item.css";
+@import "../block/navigation/navigation.css";
 
-@import "/block/navigation-bar/__logo.css";
-@import "/block/navigation-bar/navigation-bar.css";
+@import "../block/navigation-bar/__logo.css";
+@import "../block/navigation-bar/navigation-bar.css";
 
-@import "/block/hero-section/hero-section.css";
+@import "../block/hero-section/hero-section.css";
 
-@import "/block/person-main/__description.css";
-@import "/block/person-main/__image.css";
-@import "/block/person-main/person-main.css";
-@import "/block/person-main/__text-wrapper.css";
-@import "/block/person-main/__heading.css";
+@import "../block/person-main/__description.css";
+@import "../block/person-main/__image.css";
+@import "../block/person-main/person-main.css";
+@import "../block/person-main/__text-wrapper.css";
+@import "../block/person-main/__heading.css";
 
-@import "/block/cards-section/cards-section.css";
-@import "/block/cards-section/__cards-aligment.css";
-@import "/block/cards-section/__heading.css";
+@import "../block/cards-section/cards-section.css";
+@import "../block/cards-section/__cards-aligment.css";
+@import "../block/cards-section/__heading.css";
 
-@import "/block/plan-card/__main-text.css";
-@import "/block/plan-card/__heading.css";
-@import "/block/plan-card/plan-card.css";
+@import "../block/plan-card/__main-text.css";
+@import "../block/plan-card/__heading.css";
+@import "../block/plan-card/plan-card.css";
 
-@import "/block/footer/__copyright.css";
-@import "/block/footer/footer.css";
+@import "../block/footer/__copyright.css";
+@import "../block/footer/footer.css";
 
 body{
     margin: 0;
