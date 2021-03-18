@@ -33,10 +33,13 @@ function populateCurrencySelector(jsonData) {
     }
 }
 
-fetch(base_url).then(response => response.json()).then(json => {
-    populateCurrencySelector(json)
-    populateCurrentValues(json)
-})
+function updateData() {
+    fetch(base_url).then(response => response.json()).then(json => {
+        populateCurrencySelector(json)
+        populateCurrentValues(json)
+    })
+}
+updateData()
 
 const rub_input = document.getElementById("rub-currency-field")
 
@@ -45,6 +48,8 @@ const custom_input = document.getElementById("custom-currency-output")
 const targetCurrencySelector = document.getElementById("currency-selector")
 
 const swapperButton = document.getElementById("swap-button")
+
+const updateButton = document.getElementById("update-button")
 
 function calculateInput(event) {
     const currencies = document.getElementsByClassName("currency_to_swap")
@@ -91,3 +96,5 @@ custom_input.addEventListener("input", calculateInput)
 targetCurrencySelector.addEventListener("change", calculateInput)
 
 swapperButton.addEventListener("click", swapInputCurrency)
+
+updateButton.addEventListener("click", updateData)
