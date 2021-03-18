@@ -40,54 +40,96 @@ fetch(base_url).then(response => response.json()).then(json => {
     populateCurrentValues(json)
 })
 
-const currency_input = document.getElementById("current-currency-input")
+const rub_input = document.getElementById("rub-currency-field")
+
+const custom_input = document.getElementById("custom-currency-output")
 
 const targetCurrencySelector = document.getElementById("currency-selector")
 
 const swapperButton = document.getElementById("swap-button")
 
-
-// TODO Swap button. Decide to implement or delete
-
 function calculateInput(event) {
-    console.log(value)
-
     const currencies = document.getElementsByClassName("currency_to_swap")
 
-    const value = document.getElementById("current-currency-input").value
-    const output = document.getElementById("current-currency-output")
+    const rubValue = document.getElementById("rub-currency-field")
+    const customValue = document.getElementById("custom-currency-output")
 
-    const inputCurrency = currencies[0].textContent
-    const outputCurrency = currencies[1].firstElementChild.value
+    let inputCurrency
+    let outputCurrency
+    let currencyRate
 
-    const currencyRate = +document.getElementById(outputCurrency).textContent
+    if (customValue.disabled) {
+        inputCurrency = currencies[0].textContent
+        outputCurrency = currencies[1].firstElementChild.value
+        currencyRate = +document.getElementById(outputCurrency).textContent
+    } else {
+        outputCurrency = currencies[0].textContent
+        inputCurrency = currencies[1].firstElementChild.value
+        currencyRate = +document.getElementById(inputCurrency).textContent
+    }
+
+
 
     console.log(currencyRate);
 
-    output.value = value * currencyRate
+    if (customValue.disabled) {
+        customValue.value = rubValue.value * currencyRate
+        console.log(rubValue.value * currencyRate)
+    } else {
+        rubValue.value = customValue.value * currencyRate
+        console.log(customValue.value * 100);
+    }
+
+
 }
 
 function changeTargetCurrency(event) {
+
     const currencies = document.getElementsByClassName("currency_to_swap")
 
-    const value = document.getElementById("current-currency-input").value
-    const output = document.getElementById("current-currency-output")
+    const rubValue = document.getElementById("rub-currency-field")
+    const customValue = document.getElementById("custom-currency-output")
 
-    const inputCurrency = currencies[0].textContent
-    const outputCurrency = currencies[1].firstElementChild.value
+    let inputCurrency
+    let outputCurrency
+    let currencyRate
 
-    const currencyRate = +document.getElementById(outputCurrency).textContent
+    if (customValue.disabled) {
+        inputCurrency = currencies[0].textContent
+        outputCurrency = currencies[1].firstElementChild.value
+        currencyRate = +document.getElementById(outputCurrency).textContent
+    } else {
+        outputCurrency = currencies[0].textContent
+        inputCurrency = currencies[1].firstElementChild.value
+        currencyRate = +document.getElementById(inputCurrency).textContent
+    }
+
+
 
     console.log(currencyRate);
 
-    output.value = value * currencyRate
+    if (customValue.disabled) {
+        customValue.value = rubValue.value * currencyRate
+        console.log(rubValue.value * currencyRate)
+    } else {
+        rubValue.value = customValue.value * currencyRate
+        console.log(customValue.value * 100);
+    }
 }
 
 function swapInputCurrency(event) {
+    const rubNode = document.getElementById("rub-currency-field")
+    const customNode = document.getElementById("custom-currency-output")
+
+
+    const tmp = rubNode.disabled
+    rubNode.disabled = customNode.disabled
+    customNode.disabled = tmp
 
 }
 
-currency_input.addEventListener("input", calculateInput)
+rub_input.addEventListener("input", calculateInput)
+custom_input.addEventListener("input", calculateInput)
 targetCurrencySelector.addEventListener("change", changeTargetCurrency)
 
 swapperButton.addEventListener("click", swapInputCurrency)
