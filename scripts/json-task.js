@@ -31,8 +31,6 @@ function populateCurrencySelector(jsonData) {
 
         toFill.appendChild(toAppendOption)
     }
-
-    toFill.for
 }
 
 fetch(base_url).then(response => response.json()).then(json => {
@@ -68,53 +66,13 @@ function calculateInput(event) {
         currencyRate = +document.getElementById(inputCurrency).textContent
     }
 
-
-
-    console.log(currencyRate);
-
     if (customValue.disabled) {
         customValue.value = rubValue.value * currencyRate
-        console.log(rubValue.value * currencyRate)
     } else {
-        rubValue.value = customValue.value * currencyRate
-        console.log(customValue.value * 100);
+        rubValue.value = customValue.value / currencyRate
     }
 
 
-}
-
-function changeTargetCurrency(event) {
-
-    const currencies = document.getElementsByClassName("currency_to_swap")
-
-    const rubValue = document.getElementById("rub-currency-field")
-    const customValue = document.getElementById("custom-currency-output")
-
-    let inputCurrency
-    let outputCurrency
-    let currencyRate
-
-    if (customValue.disabled) {
-        inputCurrency = currencies[0].textContent
-        outputCurrency = currencies[1].firstElementChild.value
-        currencyRate = +document.getElementById(outputCurrency).textContent
-    } else {
-        outputCurrency = currencies[0].textContent
-        inputCurrency = currencies[1].firstElementChild.value
-        currencyRate = +document.getElementById(inputCurrency).textContent
-    }
-
-
-
-    console.log(currencyRate);
-
-    if (customValue.disabled) {
-        customValue.value = rubValue.value * currencyRate
-        console.log(rubValue.value * currencyRate)
-    } else {
-        rubValue.value = customValue.value * currencyRate
-        console.log(customValue.value * 100);
-    }
 }
 
 function swapInputCurrency(event) {
@@ -130,6 +88,6 @@ function swapInputCurrency(event) {
 
 rub_input.addEventListener("input", calculateInput)
 custom_input.addEventListener("input", calculateInput)
-targetCurrencySelector.addEventListener("change", changeTargetCurrency)
+targetCurrencySelector.addEventListener("change", calculateInput)
 
 swapperButton.addEventListener("click", swapInputCurrency)
