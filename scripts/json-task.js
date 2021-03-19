@@ -3,6 +3,10 @@ const base_url = "https://www.cbr-xml-daily.ru/latest.js"
 function populateCurrentValues(jsonData) {
     const toFill = document.getElementById("currency-curent-values")
 
+    if (toFill.childNodes.length != 1){
+        return
+    }
+
     for (item in jsonData["rates"]) {
         const toAppendRow = document.createElement("tr")
 
@@ -22,6 +26,10 @@ function populateCurrentValues(jsonData) {
 
 function populateCurrencySelector(jsonData) {
     const toFill = document.getElementById("currency-selector")
+
+    if (toFill.childNodes.length != 1 ){
+        return
+    }
 
     for (item in jsonData["rates"]) {
         const toAppendOption = document.createElement("option")
