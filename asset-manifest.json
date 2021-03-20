@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/digital-design-html-css/static/css/main.9d5b29c0.chunk.css",
+    "main.js": "/digital-design-html-css/static/js/main.efcabe29.chunk.js",
+    "main.js.map": "/digital-design-html-css/static/js/main.efcabe29.chunk.js.map",
+    "runtime-main.js": "/digital-design-html-css/static/js/runtime-main.26181f3c.js",
+    "runtime-main.js.map": "/digital-design-html-css/static/js/runtime-main.26181f3c.js.map",
+    "static/js/2.bdf9c844.chunk.js": "/digital-design-html-css/static/js/2.bdf9c844.chunk.js",
+    "static/js/2.bdf9c844.chunk.js.map": "/digital-design-html-css/static/js/2.bdf9c844.chunk.js.map",
+    "static/js/3.4df137dd.chunk.js": "/digital-design-html-css/static/js/3.4df137dd.chunk.js",
+    "static/js/3.4df137dd.chunk.js.map": "/digital-design-html-css/static/js/3.4df137dd.chunk.js.map",
+    "index.html": "/digital-design-html-css/index.html",
+    "static/css/main.9d5b29c0.chunk.css.map": "/digital-design-html-css/static/css/main.9d5b29c0.chunk.css.map",
+    "static/js/2.bdf9c844.chunk.js.LICENSE.txt": "/digital-design-html-css/static/js/2.bdf9c844.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.26181f3c.js",
+    "static/js/2.bdf9c844.chunk.js",
+    "static/css/main.9d5b29c0.chunk.css",
+    "static/js/main.efcabe29.chunk.js"
+  ]
+}
