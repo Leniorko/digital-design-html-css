@@ -11,10 +11,14 @@ function App() {
     setCurrencyRate(result)
   }), [] )
 
+  function updateRates(){
+    fetch("https://www.cbr-xml-daily.ru/latest.js").then(response => response.json()).then(result => {setCurrencyRate(result)})
+  }
+
 
   return currencyRateJson ? (
     <>
-      <CurrencyConverter currencyData = {currencyRateJson}/>
+      <CurrencyConverter currencyData = {currencyRateJson} updateRates={updateRates}/>
       <CurrencyPrices currencyData = {currencyRateJson}/>
     </>
   ) : <></>

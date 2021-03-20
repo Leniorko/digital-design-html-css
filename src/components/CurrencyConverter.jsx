@@ -46,6 +46,10 @@ function CurrencyConverter(props) {
         setFCDisabled(tmp)
     }
 
+    function updateRatesHandler(event){
+        props.updateRates()
+    }
+
     return (
         <table>
             <thead>
@@ -76,7 +80,7 @@ function CurrencyConverter(props) {
 
                 <tr>
                     <td colSpan="2">
-                        <button style={{ width: '100%' }} id="update-button">Update rates</button>
+                        <button style={{ width: '100%' }} id="update-button" onClick={updateRatesHandler}>Update rates</button>
                     </td>
                 </tr>
             </tbody>
